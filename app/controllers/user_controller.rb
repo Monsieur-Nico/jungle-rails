@@ -9,7 +9,7 @@ class UserController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/', notice: 'Thank you for signing up!'
     else
-      render '/signup'
+      redirect_to '/signup'
     end
   end
 
