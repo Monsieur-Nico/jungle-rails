@@ -17,7 +17,7 @@ RSpec.describe Product, type: :model do
       end
     end
 
-    context " sould properly save a new product with name" do 
+    context "should properly save a new product with name" do 
       it "should save the name and we can check it" do 
         productName = Product.new(name: nil, price: 3500, quantity: 4, category: @category)
         expect(productName.save).to be false
@@ -27,7 +27,7 @@ RSpec.describe Product, type: :model do
 
     context "should save and include a price" do 
       it "should save with price" do 
-        productPrice = Product.new(name: "RSpec", price: nil, quantity: 4, category: @category)
+        productPrice = Product.new(name: "RSpec", quantity: 4, category: @category)
         productPrice.save
         expect(productPrice.price).to eq(nil)
         p productPrice.errors.full_messages
